@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="DemoImpl">
+      <implementation-class>ws.DemoImpl</implementation-class>
+    </service>
+    <service name="ProductWSImpl">
+      <implementation-class>ws.ProductWSImpl</implementation-class>
+    </service>
+    <service name="UserAccountWSImpl">
+      <implementation-class>ws.UserAccountWSImpl</implementation-class>
+    </service>
+    <service name="HoSoWSImpl">
+      <implementation-class>ws.HoSoWSImpl</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>
