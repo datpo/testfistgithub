@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-HoSoWSImplService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/HoSoWSImplService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HoSoWSImplService" destdir="${build.generated.dir}/jax-wsCache/HoSoWSImplService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/HoSoWSImplService/wsdl/localhost_8080/JAXWSServer/HoSoWSImplService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/JAXWSServer/HoSoWSImplService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/HoSoWSImplService/wsdl/localhost_8080/JAXWSServer/HoSoWSImplService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/HoSoWSImplService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/HoSoWSImplService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-HoSoWSImplService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/HoSoWSImplService"/>
+    </target>
+    <target name="wsimport-client-UserAccountWSImplService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/UserAccountWSImplService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UserAccountWSImplService" destdir="${build.generated.dir}/jax-wsCache/UserAccountWSImplService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/UserAccountWSImplService/wsdl/localhost_8080/JAXWSServer/UserAccountWSImplService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/JAXWSServer/UserAccountWSImplService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/UserAccountWSImplService/wsdl/localhost_8080/JAXWSServer/UserAccountWSImplService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/UserAccountWSImplService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/UserAccountWSImplService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-UserAccountWSImplService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/UserAccountWSImplService"/>
+    </target>
+    <target name="wsimport-client-ProductWSImplService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ProductWSImplService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ProductWSImplService" destdir="${build.generated.dir}/jax-wsCache/ProductWSImplService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ProductWSImplService/wsdl/localhost_8080/JAXWSServer/ProductWSImplService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/JAXWSServer/ProductWSImplService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ProductWSImplService/wsdl/localhost_8080/JAXWSServer/ProductWSImplService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ProductWSImplService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ProductWSImplService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ProductWSImplService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/ws"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ProductWSImplService"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-HoSoWSImplService, wsimport-client-UserAccountWSImplService, wsimport-client-ProductWSImplService"/>
+</project>

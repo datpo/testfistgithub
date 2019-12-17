@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:5789/ws/demo?wsdl" uri="src/conf/xml-resources/web-service-references/demo/wsdl/localhost_5789/ws/demo.wsdl"/>
+    <system systemId="http://localhost:5789/ws/demo?xsd=1" uri="src/conf/xml-resources/web-service-references/demo/wsdl/localhost_5789/ws/demo.xsd_1.xsd"/>
+    <system systemId="http://localhost:5791/ws/product" uri="src/conf/xml-resources/web-service-references/product_1/wsdl/localhost_5791/ws/product.xml"/>
+    <system systemId="http://localhost:5791/ws/product?wsdl" uri="src/conf/xml-resources/web-service-references/product/wsdl/localhost_5791/ws/product.wsdl"/>
+    <system systemId="http://localhost:5791/ws/product?xsd=1" uri="src/conf/xml-resources/web-service-references/product/wsdl/localhost_5791/ws/product.xsd_1.xsd"/>
+    <system systemId="http://localhost:5791/ws/user" uri="src/conf/xml-resources/web-service-references/user/wsdl/localhost_5791/ws/user.xml"/>
+    <system systemId="http://localhost:5790/ws/product" uri="src/conf/xml-resources/web-service-references/product/wsdl/localhost_5790/ws/product.xml"/>
+    <system systemId="http://localhost:5790/ws/product?wsdl" uri="src/conf/xml-resources/web-service-references/product_1/wsdl/localhost_5790/ws/product.wsdl"/>
+    <system systemId="http://localhost:5790/ws/product?xsd=1" uri="src/conf/xml-resources/web-service-references/product_1/wsdl/localhost_5790/ws/product.xsd_1.xsd"/>
+    <system systemId="http://localhost:5790/ws/user?wsdl" uri="src/conf/xml-resources/web-service-references/user/wsdl/localhost_5790/ws/user.wsdl"/>
+    <system systemId="http://localhost:5790/ws/user?xsd=1" uri="src/conf/xml-resources/web-service-references/user/wsdl/localhost_5790/ws/user.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/JAXWSServer/UserAccountWSImplService?wsdl" uri="src/conf/xml-resources/web-service-references/UserAccountWSImplService/wsdl/localhost_8080/JAXWSServer/UserAccountWSImplService.wsdl"/>
+    <system systemId="http://localhost:8080/JAXWSServer/UserAccountWSImplService?xsd=1" uri="src/conf/xml-resources/web-service-references/UserAccountWSImplService/wsdl/localhost_8080/JAXWSServer/UserAccountWSImplService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/JAXWSServer/ProductWSImplService?wsdl" uri="src/conf/xml-resources/web-service-references/ProductWSImplService/wsdl/localhost_8080/JAXWSServer/ProductWSImplService.wsdl"/>
+    <system systemId="http://localhost:8080/JAXWSServer/ProductWSImplService?xsd=1" uri="src/conf/xml-resources/web-service-references/ProductWSImplService/wsdl/localhost_8080/JAXWSServer/ProductWSImplService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/JAXWSServer/HoSoWSImplService?wsdl" uri="src/conf/xml-resources/web-service-references/HoSoWSImplService/wsdl/localhost_8080/JAXWSServer/HoSoWSImplService.wsdl"/>
+    <system systemId="http://localhost:8080/JAXWSServer/HoSoWSImplService?xsd=1" uri="src/conf/xml-resources/web-service-references/HoSoWSImplService/wsdl/localhost_8080/JAXWSServer/HoSoWSImplService.xsd_1.xsd"/>
+</catalog>

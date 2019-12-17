@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws/">
+
+<xs:element name="dangNhap" type="tns:dangNhap"/>
+
+<xs:element name="dangNhapResponse" type="tns:dangNhapResponse"/>
+
+<xs:element name="layListHoSo" type="tns:layListHoSo"/>
+
+<xs:element name="layListHoSoResponse" type="tns:layListHoSoResponse"/>
+
+<xs:element name="nopHoSo" type="tns:nopHoSo"/>
+
+<xs:element name="nopHoSoResponse" type="tns:nopHoSoResponse"/>
+
+<xs:element name="xemHoSo" type="tns:xemHoSo"/>
+
+<xs:element name="xemHoSoResponse" type="tns:xemHoSoResponse"/>
+
+<xs:element name="xoaHoSo" type="tns:xoaHoSo"/>
+
+<xs:element name="xoaHoSoResponse" type="tns:xoaHoSoResponse"/>
+
+<xs:complexType name="xoaHoSo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="xoaHoSoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="xemHoSo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="xemHoSoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:hoSo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hoSo" abstract="true">
+<xs:sequence>
+<xs:element name="coQuanTiepNhan" type="tns:coQuanTiepNhan" minOccurs="0"/>
+<xs:element name="congDan" type="tns:congDan" minOccurs="0"/>
+<xs:element name="giayTo" type="tns:giayTo" minOccurs="0"/>
+<xs:element name="hoSoDangKyHoKinhDoanh" type="tns:hoSoDangKyHoKinhDoanh" minOccurs="0"/>
+<xs:element name="loaiHoSo" type="xs:string" minOccurs="0"/>
+<xs:element name="maHoSo" type="xs:int"/>
+<xs:element name="thongTinLienHe" type="tns:thongTinLienHe" minOccurs="0"/>
+<xs:element name="thongTinLienHeCongDan" type="tns:thongTinLienHe" minOccurs="0"/>
+<xs:element name="trangThaiHoSo" type="xs:string" minOccurs="0"/>
+<xs:element name="user" type="tns:userAccount" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="coQuanTiepNhan">
+<xs:sequence>
+<xs:element name="idCoQuanTiepNhan" type="xs:int"/>
+<xs:element name="tenCoQuanTiepNhan" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="congDan">
+<xs:sequence>
+<xs:element name="diaChiTamTru" type="xs:string" minOccurs="0"/>
+<xs:element name="diaChiThuongTru" type="xs:string" minOccurs="0"/>
+<xs:element name="gioiTinh" type="xs:string" minOccurs="0"/>
+<xs:element name="idCongDan" type="xs:int"/>
+<xs:element name="idThongTinLienHe" type="xs:int"/>
+<xs:element name="ngaySinh" type="xs:string" minOccurs="0"/>
+<xs:element name="quocTich" type="xs:string" minOccurs="0"/>
+<xs:element name="tenCongDan" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="giayTo">
+<xs:sequence>
+<xs:element name="idCongDan" type="xs:int"/>
+<xs:element name="maGiayChungThuc" type="xs:int"/>
+<xs:element name="ngayCap" type="xs:string" minOccurs="0"/>
+<xs:element name="noiCap" type="xs:string" minOccurs="0"/>
+<xs:element name="soGiayChungThuc" type="xs:string" minOccurs="0"/>
+<xs:element name="tenGiayChungThuc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hoSoDangKyHoKinhDoanh">
+<xs:complexContent>
+<xs:extension base="tns:hoSo">
+<xs:sequence>
+<xs:element name="diaDiemKinhDoanh" type="xs:string" minOccurs="0"/>
+<xs:element name="idCongDan" type="xs:int"/>
+<xs:element name="idThongTin" type="xs:int"/>
+<xs:element name="list" type="tns:fileDinhKem" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="moTaTaiLieu" type="xs:string" minOccurs="0"/>
+<xs:element name="ngayCoHieuLuc" type="xs:string" minOccurs="0"/>
+<xs:element name="ngayDangKy" type="xs:string" minOccurs="0"/>
+<xs:element name="ngayHetHieuLuc" type="xs:string" minOccurs="0"/>
+<xs:element name="soVonKinhDoanh" type="xs:double"/>
+<xs:element name="tenHoKinhDoanh" type="xs:string" minOccurs="0"/>
+<xs:element name="tenNganhNgheKinhDoanh" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="fileDinhKem">
+<xs:sequence>
+<xs:element name="hinhAnh" type="xs:anyType" minOccurs="0"/>
+<xs:element name="idHoSoHoKinhDoanh" type="xs:int"/>
+<xs:element name="idTaiLieu" type="xs:int"/>
+<xs:element name="lichSuPhienBan" type="xs:string" minOccurs="0"/>
+<xs:element name="tenTaiLieu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="thongTinLienHe">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="fax" type="xs:string" minOccurs="0"/>
+<xs:element name="maThongTin" type="xs:int"/>
+<xs:element name="phone" type="xs:string" minOccurs="0"/>
+<xs:element name="website" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userAccount">
+<xs:sequence>
+<xs:element name="congDan" type="tns:congDan" minOccurs="0"/>
+<xs:element name="idUser" type="xs:int"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="layListHoSo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="layListHoSoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:hoSoDangKyHoKinhDoanh" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nopHoSo">
+<xs:sequence>
+<xs:element name="arg0" type="tns:hoSo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nopHoSoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dangNhap">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dangNhapResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
