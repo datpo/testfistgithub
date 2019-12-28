@@ -845,12 +845,12 @@
                         <div class="btn-group mr-20">
                             <button type="button" class="btn btn-default dropdown-toggle a-dropdown btn-avta" data-toggle="dropdown">
                                 <span class="caret"></span>
-                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831" alt="">Nguyễn Tiến Đạt
+                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831" alt="">${account.getUserName()}
                             </button>
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="QuanLyHoSoServlet">Quản lý hồ sơ</a></li>
-                                <li><a href="https://dvc.bacninh.gov.vn/group/control_panel/manage?p_p_id=2&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;doAsGroupId=7888111&amp;refererPlid=1126903" target="_target">Quản lý thông tin tài khoản</a></li>
+                                <li><a href="" target="_target">Quản lý thông tin tài khoản</a></li>
                                 <li><a href="/profile" target="target">Quản lý thông tin cá nhân</a></li>
                                 <li><a href="/thay-doi-mat-khau">Thay đổi mật khẩu</a></li>
                                 <li role="separator" class="divider"></li>
@@ -1161,10 +1161,9 @@
                                                                                         <label class="oep-label-red">*</label>
                                                                                         <label class="oep-label-red ng-hide" ng-show="submitted&amp;&amp; fmt.donviTiepNhanId.$error.required">Bạn phải chọn cơ quan quản lý</label>
                                                                                         <select required="" ng-model="hoSo.donviTiepNhanId" name="donviTiepNhanId" class="oep-select ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required">
-                                                                                            <option value="" selected="selected">----Chọn cơ quan quản lý----</option>
+                                                                                            <option value=" ${hoSoXem.getCoQuanTiepNhan().getTenCoQuanTiepNhan()}" selected="selected">----Chọn cơ quan quản lý----</option>
                                                                                             <!-- ngRepeat: toChuc in dsToChuc -->
-                                                                                            <option ng-repeat="toChuc in dsToChuc" ng-value="1311" class="ng-binding ng-scope" value="number:1311" selected="selected">Trung tâm Hành chính công huyện Quế Võ</option>
-                                                                                            <!-- end ngRepeat: toChuc in dsToChuc -->
+                                                                                           
                                                                                         </select>
                                                                                     </td>
                                                                                 </tr>
@@ -1480,131 +1479,7 @@
 
                                                         <script src="/oep-dvc-portlet/js/angular1.6.4.js"></script>
 
-<!--                                                        <script type="text/javascript">
-                                                            var jsonHoSo = {
-                                                                "ttdon": {
-                                                                    "gtcnNoiCap": "",
-                                                                    "ten": "nguyen tien dat",
-                                                                    "gioiTinh": "nam",
-                                                                    "nam": 2019,
-                                                                    "quocTich": "viet nam",
-                                                                    "gtcnSo": "",
-                                                                    "dienThoai": "",
-                                                                    "gtcnNgayHetHan": "",
-                                                                    "diaChiKDTinh": "bac ninh",
-                                                                    "diaChiHienTaiHuyen": "",
-                                                                    "diaChiThuongTruXa": "",
-                                                                    "dienThoaiKD": 382094678,
-                                                                    "websiteKD": "",
-                                                                    "cmndNgayCap": "23/11/2013",
-                                                                    "ngaySinh": "23/07/1996",
-                                                                    "vonDKKD": 2000000000,
-                                                                    "ngay": 2,
-                                                                    "thang": 12,
-                                                                    "diaChiKDHuyen": "abc",
-                                                                    "soLuongLaoDong": 1,
-                                                                    "gtcn": "",
-                                                                    "fax": "",
-                                                                    "gtcnNgayCap": "",
-                                                                    "cmndcancuoc": 14873457,
-                                                                    "diaChiHienTaiTinh": "",
-                                                                    "website": "",
-                                                                    "diaChiThuongTruTinh": "",
-                                                                    "diaChiKDXa": "abc",
-                                                                    "donviTiepNhanId": 1311,
-                                                                    "loaiHinhKD": "ban quan ao",
-                                                                    "cmndNoiCap": "hoa binh",
-                                                                    "emailKD": "datpo.96@gmail.com",
-                                                                    "diaChiThuongTruHuyen": "",
-                                                                    "danToc": "kinh",
-                                                                    "email": "",
-                                                                    "tenKD": "nguyen tien dat",
-                                                                    "diaChiHienTaiXa": "",
-                                                                    "diaChiThuongTru": "",
-                                                                    "camKet": "on",
-                                                                    "faxKD": "",
-                                                                    "diaChiHienTai": "",
-                                                                    "diaChiKD": "abc"
-                                                                }
-                                                            };
-                                                            $(document).ready(function() {
-                                                                $.each(jsonHoSo, function(key, data) {
-                                                                    $.each(data, function(index, data) {
-                                                                        if (index != "donviTiepNhanId") {
-                                                                            if ($("input[name='" + index + "']").attr('type') == "radio" || $("input[name='" + index + "']").attr('type') == "checkbox") {
-                                                                                // check truong hop input là radio hoac checkbox
-                                                                                $("input[name='" + index + "'][value='" + data + "']").prop("checked", true);
-                                                                            } else {
-                                                                                $("[name='" + index + "']").val(data);
-                                                                            }
-                                                                        } else {
-                                                                            if ($("input[name='" + index + "']").attr('type') == "radio" || $("input[name='" + index + "']").attr('type') == "checkbox") {
-                                                                                // check truong hop input là radio hoac checkbox
-                                                                                $("input[name='" + index + "'][value='" + data + "']").prop("checked", true);
-                                                                            } else {
-                                                                                $("[name='" + index + "']").val("number:" + data);
 
-                                                                            }
-                                                                        }
-                                                                    })
-                                                                })
-
-                                                            });
-
-                                                            function createLiferayResourceURL(portletId, resourceId, params) {
-                                                                var resourceURL = Liferay.PortletURL.createResourceURL();
-                                                                resourceURL.setWindowState("normal");
-                                                                resourceURL.setPortletMode("view");
-                                                                resourceURL.setPortletId(portletId);
-                                                                resourceURL.setResourceId(resourceId);
-
-                                                                if (params) {
-                                                                    for (var key in params) {
-                                                                        resourceURL.setParameter(key, params[key]);
-                                                                    }
-                                                                }
-
-                                                                return resourceURL.toString();
-                                                            }
-
-                                                            function createResourceURL(resourceId, params) {
-                                                                return createLiferayResourceURL('chitiethoso_WAR_oepdvcportlet', resourceId, params);
-                                                            }
-
-                                                            function callAjax(resourceId, params, callback) {
-                                                                var url = createResourceURL(resourceId, params);
-                                                                $_http.get(url).then(function(response) {
-                                                                    callback(response.data);
-                                                                });
-                                                            }
-
-                                                            function myController($scope, $http) {
-                                                                $_scope = $scope;
-                                                                $_http = $http;
-                                                            };
-
-                                                            myController.$inject = ['$scope', '$http'];
-                                                            var app = angular.module('myApp', []);
-                                                            app.controller('myCtrl', myController);
-
-                                                            AUI().use('aui-base', 'liferay-portlet-url', 'aui-node', function(A) {
-                                                                callAjax('getInitData', {
-                                                                    "hoSoId": 1277861,
-                                                                    "tthcId": 5386
-                                                                }, function(response) {
-                                                                    if (response.hoSo) {
-                                                                        $_scope.hoSo = response.hoSo.ttdon;
-                                                                    }
-
-                                                                    var fields = ["ngay", "thang", "nam", "donviTiepNhanId", "doanhNghiep", "congDan", "dsToChuc"];
-                                                                    for (var i = 0; i < fields.length; i++) {
-                                                                        $_scope[fields[i]] = response[fields[i]];
-                                                                    }
-
-                                                                    eFormDonviTiepNhan(1311, true);
-                                                                });
-                                                            });
-                                                        </script>-->
 
                                                         <script type="text/javascript">
                                                             window.setTimeout("eFormDonviTiepNhan(1311,true)", 2000);
@@ -1646,200 +1521,7 @@
         </form>
     </div>
 
-<!--    <footer class="container-fluid bg-xanh">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-7">
-                    <h4 class="tle-f">Ủy Ban nhân dân Tỉnh Bắc Ninh</h4>
-                    <h3 class="tle-f1">CỔNG THÔNG TIN DỊCH VỤ CÔNG Tỉnh Bắc Ninh</h3>
-                    <p>
-                        Địa chỉ: Địa chỉ: Số 10 Phù Đổng Thiên Vương, Suối Hoa, Bắc Ninh.
-                        <br> Điện thoại :0222 3666 222
-                    </p>
-                </div>
-                <div class="col-md-5">
-                    <ul class="list-unstyled text-tc">
-                        <li class="">
-                            <svg class="svg-inline--fa fa-chart-area fa-w-16 mr-5" aria-hidden="true" data-prefix="fas" data-icon="chart-area" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                                <path fill="currentColor" d="M500 384c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v308h436zM372.7 159.5L288 216l-85.3-113.7c-5.1-6.8-15.5-6.3-19.9 1L96 248v104h384l-89.9-187.8c-3.2-6.5-11.4-8.7-17.4-4.7z"></path>
-                            </svg>
-                             <i class="fas fa-chart-area mr-5"></i> Số lượt truy cập: <strong>5698723</strong></li>
-                        <li>
-                            <svg class="svg-inline--fa fa-user-clock fa-w-16 mr-5" aria-hidden="true" data-prefix="fas" data-icon="user-clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                                <g>
-                                    <path fill="currentColor" d="M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z"></path>
-                                    <circle fill="currentColor" cx="256" cy="364" r="17.7078">
-                                        <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="r" values="28;14;28;28;14;28;"></animate>
-                                        <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="1;0;1;1;0;1;"></animate>
-                                    </circle>
-                                    <path fill="currentColor" opacity="1" d="M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z">
-                                        <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="1;0;0;0;0;1;"></animate>
-                                    </path>
-                                    <path fill="currentColor" opacity="0" d="M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z">
-                                        <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="0;0;1;1;0;0;"></animate>
-                                    </path>
-                                </g>
-                            </svg>
-                             <i class="fas fa-user-clock mr-5"></i> Số lượt đang online: <strong>723</strong></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="container-fluid bg-xanhdam">
-        <div class="row">
-            <div class="col-md-6">
-                <p class="text-f1">©2019 Bản quyền thuộc về Tỉnh Bắc Ninh</p>
-            </div>
-            <div class="col-md-6">
-                <p class="text-f">
-                    <a href="http://dtt.vn"><img class="mr-5" src="/bacninh-home-v2-theme/images/logo-DTT.png" alt=""></a> Được thiết kế bởi DTT</p>
-            </div>
-        </div>
 
-    </div>
-     The scroll to top feature 
-
-    <div class="scroll-top-wrapper">
-        <span class="scroll-top-inner">
-		<svg class="svg-inline--fa fa-arrow-circle-up fa-w-16 fa-2x" aria-hidden="true" data-prefix="fa" data-icon="arrow-circle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg> <i class="fa fa-2x fa-arrow-circle-up"></i> 
-	  </span>
-    </div>
-
-    <script type="text/javascript">
-        $(function() {
-            $(".expand").on("click", function() {
-                // $(this).next().slideToggle(200);
-                $expand = $(this).find(">:first-child");
-
-                if ($expand.text() == "Thu gọn -") {
-                    $expand.text("Xem thêm +");
-                } else {
-                    $expand.text("Thu gọn -");
-                }
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-
-            $(function() {
-
-                $(document).on('scroll', function() {
-
-                    if ($(window).scrollTop() > 100) {
-                        $('.scroll-top-wrapper').addClass('show');
-                    } else {
-                        $('.scroll-top-wrapper').removeClass('show');
-                    }
-                });
-
-                $('.scroll-top-wrapper').on('click', scrollToTop);
-            });
-
-            function scrollToTop() {
-                verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-                element = $('body');
-                offset = element.offset();
-                offsetTop = offset.top;
-                $('html, body').animate({
-                    scrollTop: offsetTop
-                }, 500, 'linear');
-            }
-
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#Carousel').carousel({
-                interval: 5000
-            })
-        });
-    </script>
-
-    <script src="https://dvc.bacninh.gov.vn/oep-dvc-portlet/js/main.js?browserId=other&amp;minifierType=js&amp;languageId=vi_VN&amp;b=6205&amp;t=1575003430000" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        // <![CDATA[
-
-        Liferay.Util.addInputFocus();
-
-        // ]]>
-    </script>
-
-    <script type="text/javascript">
-        // <![CDATA[
-
-        Liferay.Portlet.onLoad({
-            canEditTitle: false,
-            columnPos: 0,
-            isStatic: 'end',
-            namespacedId: 'p_p_id_chitiethoso_WAR_oepdvcportlet_',
-            portletId: 'chitiethoso_WAR_oepdvcportlet',
-            refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d1126903\x26p_p_id\x3dchitiethoso_WAR_oepdvcportlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fquan-ly-ho-so\x253Fp_p_id\x253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_redirectPage\x253Dhttps\x25253A\x25252F\x25252Fdvc\x2ebacninh\x2egov\x2evn\x25252Fquan-ly-ho-so\x25253Fp_p_id\x25253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x252526p_p_lifecycle\x25253D0\x252526p_p_state\x25253Dnormal\x252526p_p_mode\x25253Dview\x252526p_p_col_id\x25253Dcolumn-1\x252526p_p_col_count\x25253D1\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_cur\x25253D1\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_delta\x25253D10\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_maSo\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tuNgay\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_denNgay\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_clickAdvanceSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_linhVucIdSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tthcIdSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_keywords\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_advancedSearch\x25253Dfalse\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_andOperator\x25253Dtrue\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_mvcPath\x253D\x25252Fhtml\x25252Fdvc\x25252Fportlet\x25252Fhosodoanhnghiep\x25252Fxem_hoso\x2ejsp\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_hoSoId\x253D1277861\x26_chitiethoso_WAR_oepdvcportlet_isShowFileBuocTruoc\x3dtrue\x26redirectPage\x3dhttps\x253A\x252F\x252Fdvc\x2ebacninh\x2egov\x2evn\x252Fquan-ly-ho-so\x253Fp_p_id\x253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_cur\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_delta\x253D10\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_maSo\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tuNgay\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_denNgay\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_clickAdvanceSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_linhVucIdSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tthcIdSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_keywords\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_advancedSearch\x253Dfalse\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_andOperator\x253Dtrue\x26_chitiethoso_WAR_oepdvcportlet_view\x3d0\x26_chitiethoso_WAR_oepdvcportlet_isShowFileKetQua\x3dtrue\x26mvcPath\x3d\x252Fhtml\x252Fdvc\x252Fportlet\x252Fhosodoanhnghiep\x252Fxem_hoso\x2ejsp\x26_chitiethoso_WAR_oepdvcportlet_hoSoId\x3d1277861\x26hoSoId\x3d1277861'
-        });
-
-        Liferay.Portlet.onLoad({
-            canEditTitle: false,
-            columnPos: 0,
-            isStatic: 'end',
-            namespacedId: 'p_p_id_chitiethoso_WAR_oepdvcportlet_',
-            portletId: 'chitiethoso_WAR_oepdvcportlet',
-            refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d1126903\x26p_p_id\x3dchitiethoso_WAR_oepdvcportlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_static\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fquan-ly-ho-so\x253Fp_p_id\x253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_redirectPage\x253Dhttps\x25253A\x25252F\x25252Fdvc\x2ebacninh\x2egov\x2evn\x25252Fquan-ly-ho-so\x25253Fp_p_id\x25253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x252526p_p_lifecycle\x25253D0\x252526p_p_state\x25253Dnormal\x252526p_p_mode\x25253Dview\x252526p_p_col_id\x25253Dcolumn-1\x252526p_p_col_count\x25253D1\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_cur\x25253D1\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_delta\x25253D10\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_maSo\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tuNgay\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_denNgay\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_clickAdvanceSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_linhVucIdSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tthcIdSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_keywords\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_advancedSearch\x25253Dfalse\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_andOperator\x25253Dtrue\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_mvcPath\x253D\x25252Fhtml\x25252Fdvc\x25252Fportlet\x25252Fhosodoanhnghiep\x25252Fxem_hoso\x2ejsp\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_hoSoId\x253D1277861\x26redirectPage\x3dhttps\x253A\x252F\x252Fdvc\x2ebacninh\x2egov\x2evn\x252Fquan-ly-ho-so\x253Fp_p_id\x253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_cur\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_delta\x253D10\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_maSo\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tuNgay\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_denNgay\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_clickAdvanceSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_linhVucIdSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tthcIdSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_keywords\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_advancedSearch\x253Dfalse\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_andOperator\x253Dtrue\x26_chitiethoso_WAR_oepdvcportlet_view\x3d3\x26mvcPath\x3d\x252Fhtml\x252Fdvc\x252Fportlet\x252Fhosodoanhnghiep\x252Fxem_hoso\x2ejsp\x26_chitiethoso_WAR_oepdvcportlet_hoSoId\x3d1277861\x26hoSoId\x3d1277861'
-        });
-
-        Liferay.Portlet.onLoad({
-            canEditTitle: false,
-            columnPos: 0,
-            isStatic: 'end',
-            namespacedId: 'p_p_id_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_',
-            portletId: 'hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe',
-            refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d1126903\x26p_p_id\x3dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fquan-ly-ho-so\x253Fp_p_id\x253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_redirectPage\x253Dhttps\x25253A\x25252F\x25252Fdvc\x2ebacninh\x2egov\x2evn\x25252Fquan-ly-ho-so\x25253Fp_p_id\x25253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x252526p_p_lifecycle\x25253D0\x252526p_p_state\x25253Dnormal\x252526p_p_mode\x25253Dview\x252526p_p_col_id\x25253Dcolumn-1\x252526p_p_col_count\x25253D1\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_cur\x25253D1\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_delta\x25253D10\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_maSo\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tuNgay\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_denNgay\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_clickAdvanceSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_linhVucIdSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tthcIdSearch\x25253D0\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_keywords\x25253D\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_advancedSearch\x25253Dfalse\x252526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_andOperator\x25253Dtrue\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_mvcPath\x253D\x25252Fhtml\x25252Fdvc\x25252Fportlet\x25252Fhosodoanhnghiep\x25252Fxem_hoso\x2ejsp\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_hoSoId\x253D1277861\x26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_hoSoId\x3d1277861\x26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_redirectPage\x3dhttps\x253A\x252F\x252Fdvc\x2ebacninh\x2egov\x2evn\x252Fquan-ly-ho-so\x253Fp_p_id\x253Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_cur\x253D1\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_delta\x253D10\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_maSo\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tuNgay\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_denNgay\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_clickAdvanceSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_linhVucIdSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tthcIdSearch\x253D0\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_keywords\x253D\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_advancedSearch\x253Dfalse\x2526_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_andOperator\x253Dtrue\x26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_mvcPath\x3d\x252Fhtml\x252Fdvc\x252Fportlet\x252Fhosodoanhnghiep\x252Fxem_hoso\x2ejsp'
-        });
-        AUI().use('aui-base', 'liferay-menu', 'liferay-notice', 'liferay-poller', function(A) {
-            (function() {
-                Liferay.Util.addInputType();
-
-                Liferay.Portlet.ready(
-                    function(portletId, node) {
-                        Liferay.Util.addInputType(node);
-                    }
-                );
-
-                if (A.UA.mobile) {
-                    Liferay.Util.addInputCancel();
-                }
-            })();
-            (function() {
-                new Liferay.Menu();
-
-                var liferayNotices = Liferay.Data.notices;
-
-                for (var i = 1; i < liferayNotices.length; i++) {
-                    new Liferay.Notice(liferayNotices[i]);
-                }
-
-                Liferay.Poller.init({
-                    encryptedUserId: 'NOJ2aXH/mhJZepVtITbcoQ==',
-                    supportsComet: false
-                });
-
-            })();
-        });
-        // ]]>
-    </script>
-
-    <script src="https://dvc.bacninh.gov.vn/bacninh-home-v2-theme/js/main.js?browserId=other&amp;minifierType=js&amp;languageId=vi_VN&amp;b=6205&amp;t=1574592239000" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        // <![CDATA[
-
-        // ]]>
-    </script>
-
-    <script src="https://dvc.bacninh.gov.vn/bacninh-home-v2-theme/js/oep-common.js?browserId=other&amp;minifierType=js&amp;languageId=vi_VN&amp;b=6205&amp;t=1574592239000" type="text/javascript"></script>
-    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>-->
 
 </body>
 

@@ -12,7 +12,7 @@
     
    <welcome-file-list>
  
-   <welcome-file>TrangChuServlet</welcome-file>
+   <welcome-file>DangNhapServlet</welcome-file>
     
    
     

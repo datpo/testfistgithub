@@ -101,7 +101,7 @@ public class XoaHoSoServlet extends HttpServlet {
        
        request.setAttribute("hoSoXem", hoSoDangKyHoKinhDoanh);
        
-       hoSoDangKyHoKinhDoanh.getNg
+       
        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/XoaHoSoView.jsp");
        dispatcher.forward(request, response);
    }

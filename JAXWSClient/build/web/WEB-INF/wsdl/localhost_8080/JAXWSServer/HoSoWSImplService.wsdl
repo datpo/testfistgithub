@@ -4,12 +4,6 @@
 <xsd:import namespace="http://ws/" schemaLocation="http://localhost:8080/JAXWSServer/HoSoWSImplService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="nopHoSo">
-<part name="parameters" element="tns:nopHoSo"/>
-</message>
-<message name="nopHoSoResponse">
-<part name="parameters" element="tns:nopHoSoResponse"/>
-</message>
 <message name="xemHoSo">
 <part name="parameters" element="tns:xemHoSo"/>
 </message>
@@ -28,6 +22,12 @@
 <message name="dangNhapResponse">
 <part name="parameters" element="tns:dangNhapResponse"/>
 </message>
+<message name="nopHoSo">
+<part name="parameters" element="tns:nopHoSo"/>
+</message>
+<message name="nopHoSoResponse">
+<part name="parameters" element="tns:nopHoSoResponse"/>
+</message>
 <message name="layListHoSo">
 <part name="parameters" element="tns:layListHoSo"/>
 </message>
@@ -35,10 +35,6 @@
 <part name="parameters" element="tns:layListHoSoResponse"/>
 </message>
 <portType name="HoSoWS">
-<operation name="nopHoSo">
-<input wsam:Action="http://ws/HoSoWS/nopHoSoRequest" message="tns:nopHoSo"/>
-<output wsam:Action="http://ws/HoSoWS/nopHoSoResponse" message="tns:nopHoSoResponse"/>
-</operation>
 <operation name="xemHoSo">
 <input wsam:Action="http://ws/HoSoWS/xemHoSoRequest" message="tns:xemHoSo"/>
 <output wsam:Action="http://ws/HoSoWS/xemHoSoResponse" message="tns:xemHoSoResponse"/>
@@ -51,6 +47,10 @@
 <input wsam:Action="http://ws/HoSoWS/dangNhapRequest" message="tns:dangNhap"/>
 <output wsam:Action="http://ws/HoSoWS/dangNhapResponse" message="tns:dangNhapResponse"/>
 </operation>
+<operation name="nopHoSo">
+<input wsam:Action="http://ws/HoSoWS/nopHoSoRequest" message="tns:nopHoSo"/>
+<output wsam:Action="http://ws/HoSoWS/nopHoSoResponse" message="tns:nopHoSoResponse"/>
+</operation>
 <operation name="layListHoSo">
 <input wsam:Action="http://ws/HoSoWS/layListHoSoRequest" message="tns:layListHoSo"/>
 <output wsam:Action="http://ws/HoSoWS/layListHoSoResponse" message="tns:layListHoSoResponse"/>
@@ -58,15 +58,6 @@
 </portType>
 <binding name="HoSoWSImplPortBinding" type="tns:HoSoWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="nopHoSo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="xemHoSo">
 <soap:operation soapAction=""/>
 <input>
@@ -86,6 +77,15 @@
 </output>
 </operation>
 <operation name="dangNhap">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="nopHoSo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

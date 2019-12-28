@@ -27,21 +27,6 @@ public interface HoSoWS {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "nopHoSo", targetNamespace = "http://ws/", className = "ws.NopHoSo")
-    @ResponseWrapper(localName = "nopHoSoResponse", targetNamespace = "http://ws/", className = "ws.NopHoSoResponse")
-    @Action(input = "http://ws/HoSoWS/nopHoSoRequest", output = "http://ws/HoSoWS/nopHoSoResponse")
-    public String nopHoSo(
-        @WebParam(name = "arg0", targetNamespace = "")
-        HoSo arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -90,6 +75,21 @@ public interface HoSoWS {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "nopHoSo", targetNamespace = "http://ws/", className = "ws.NopHoSo")
+    @ResponseWrapper(localName = "nopHoSoResponse", targetNamespace = "http://ws/", className = "ws.NopHoSoResponse")
+    @Action(input = "http://ws/HoSoWS/nopHoSoRequest", output = "http://ws/HoSoWS/nopHoSoResponse")
+    public String nopHoSo(
+        @WebParam(name = "arg0", targetNamespace = "")
+        HoSo arg0);
 
     /**
      * 

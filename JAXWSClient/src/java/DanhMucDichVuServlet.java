@@ -21,6 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 public class DanhMucDichVuServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        
+        
+        
         RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/DanhMucHoSoView.jsp");
         dispatcher.forward(request, response);
     }

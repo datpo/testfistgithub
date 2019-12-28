@@ -16,10 +16,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="congDan" type="{http://ws/}congDan" minOccurs="0"/>
- *         &lt;element name="idUser" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="gender" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,56 +29,38 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "userAccount", propOrder = {
-    "congDan",
-    "idUser",
+    "gender",
     "password",
-    "username"
+    "userName"
 })
 public class UserAccount {
 
-    protected CongDan congDan;
-    protected int idUser;
+    protected String gender;
     protected String password;
-    protected String username;
+    protected String userName;
 
     /**
-     * Gets the value of the congDan property.
+     * Gets the value of the gender property.
      * 
      * @return
      *     possible object is
-     *     {@link CongDan }
+     *     {@link String }
      *     
      */
-    public CongDan getCongDan() {
-        return congDan;
+    public String getGender() {
+        return gender;
     }
 
     /**
-     * Sets the value of the congDan property.
+     * Sets the value of the gender property.
      * 
      * @param value
      *     allowed object is
-     *     {@link CongDan }
+     *     {@link String }
      *     
      */
-    public void setCongDan(CongDan value) {
-        this.congDan = value;
-    }
-
-    /**
-     * Gets the value of the idUser property.
-     * 
-     */
-    public int getIdUser() {
-        return idUser;
-    }
-
-    /**
-     * Sets the value of the idUser property.
-     * 
-     */
-    public void setIdUser(int value) {
-        this.idUser = value;
+    public void setGender(String value) {
+        this.gender = value;
     }
 
     /**
@@ -107,27 +88,27 @@ public class UserAccount {
     }
 
     /**
-     * Gets the value of the username property.
+     * Gets the value of the userName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * Sets the value of the username property.
+     * Sets the value of the userName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUsername(String value) {
-        this.username = value;
+    public void setUserName(String value) {
+        this.userName = value;
     }
 
 }

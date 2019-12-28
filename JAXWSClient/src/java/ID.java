@@ -9,13 +9,13 @@
  * @author datpo_000
  */
 public class ID {
-    public volatile static int maThongTinCongDan = 122;
-    public volatile static int maCongDan = 122;
-    public volatile static int maGiayTo = 122;
-    public volatile static int maThongTinHoKinhDoanh = 322;
-    public volatile static int maHoSo = 122;
-    public volatile static int maTaiLieu = 122;
-    public volatile static int maCoQuanTiepNhan = 1222;
+    public volatile static int maThongTinCongDan = 125;
+    public volatile static int maCongDan = 125;
+    public volatile static int maGiayTo = 125;
+    public volatile static int maThongTinHoKinhDoanh = 325;
+    public volatile static int maHoSo = 125;
+    public volatile static int maTaiLieu = 125;
+    public volatile static int maCoQuanTiepNhan = 1225;
     
     public static int getMaThongTinCongDan(){
         return ++maThongTinCongDan;

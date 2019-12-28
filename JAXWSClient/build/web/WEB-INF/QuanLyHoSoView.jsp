@@ -822,7 +822,7 @@
                         <div class="btn-group mr-20">
                             <button type="button" class="btn btn-default dropdown-toggle a-dropdown btn-avta" data-toggle="dropdown">
                                 <span class="caret"></span>
-                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831" alt="">Nguyễn Tiến Đạt
+                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831" alt="">${account.getUserName()}
                             </button>
 
                             <ul class="dropdown-menu" role="menu">
@@ -1372,7 +1372,7 @@
                                                                 </li>
 
                                                                 <li>
-                                                                    <a href="#" class="oep-icon-delete" onclick="if(confirm(&quot;Bạn có chắc chắn muốn xóa?&quot;)){location.href=&quot;https://dvc.bacninh.gov.vn/quan-ly-ho-so?p_auth=WHX4bF7G&amp;p_p_id=hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=1&amp;_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_redirectPage=https%3A%2F%2Fdvc.bacninh.gov.vn%2Fquan-ly-ho-so%3Fp_p_id%3Dhosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Dcolumn-1%26p_p_col_count%3D1%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_cur%3D1%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_delta%3D10%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_maSo%3D%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tuNgay%3D%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_denNgay%3D%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_clickAdvanceSearch%3D0%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_linhVucIdSearch%3D0%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_tthcIdSearch%3D0%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_keywords%3D%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_advancedSearch%3Dfalse%26_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_andOperator%3Dtrue&amp;_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_hoSoId=1277861&amp;_hosodoanhnghiep_WAR_oepdvcportlet_INSTANCE_K6UXenJy9mhe_javax.portlet.action=xoaHoSo&quot;;}"> 
+                                                                    <a href="#" class="oep-icon-delete" onclick=""> 
                                                                         Xóa hồ sơ
                                                                     </a>
                                                                 </li>

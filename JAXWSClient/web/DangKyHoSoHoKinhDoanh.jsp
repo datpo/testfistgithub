@@ -822,7 +822,7 @@
                             <div class="btn-group mr-20">
                                 <button type="button" class="btn btn-default dropdown-toggle a-dropdown btn-avta" data-toggle="dropdown">
                                     <span class="caret"></span>
-                                    <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=FioH1WdQm5J5FsoCNi%2B0q7bMTyY%3D&amp;t=1575089331831" alt="">Lê Văn Tình
+                                    <img class="img-thumbnail img-circle pad-2 mr-5" src="" alt="">${account.getUserName()}
                                 </button>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -1050,7 +1050,7 @@
                                                                         <label class="oep-label-red">*</label>
                                                                         <label class="oep-label-red ng-hide" ng-show="submitted & amp; & amp; fmt.donviTiepNhanId.$error.required">Bạn phải chọn cơ quan quản lý</label>
                                                                         <select required="" ng-model="hoSo.donviTiepNhanId" name="donViTiepNhan" class="oep-select ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
-                                                                            <option value="" selected="selected">----Chọn cơ quan quản lý----</option>
+                                                                            <option value=" ${hoSoXem.getCoQuanTiepNhan().getTenCoQuanTiepNhan()}" selected="selected">----Chọn cơ quan quản lý----</option>
                                                                             <!-- ngRepeat: toChuc in dsToChuc -->
                                                                             <option ng-repeat="toChuc in dsToChuc" ng-value="1135" class="ng-binding ng-scope" value="Phòng Tài chính-Kế hoạch - UBND thành phố Bắc Ninh">Phòng Tài chính-Kế hoạch - UBND thành phố Bắc Ninh</option>
                                                                             <!-- end ngRepeat: toChuc in dsToChuc -->
@@ -1076,7 +1076,7 @@
                                                                         <label class="oep-label-bold">Tôi là: </label>
                                                                         <label class="oep-label-note">(ghi họ tên bằng chữ in hoa)</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" type="text" required="" name="tenNguoiYeuCau">
+                                                                        <input class="oep-inputfield" type="text" required="" name="tenNguoiYeuCau" value="${hoSoDangKyHoKinhDoanh.getCongDan().getTenCongDan()}">
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -1087,12 +1087,12 @@
                                                                     <td colspan="1" style="padding-top: 0 !important;">
                                                                         <label class="oep-label-bold">Giới tính:</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" type="text" required="" name="gioiTinh">
+                                                                        <input class="oep-inputfield" type="text" required="" name="gioiTinh" value="${hoSoDangKyHoKinhDoanh.getCongDan().getGioiTinh()}">
                                                                     </td>
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Sinh ngày:</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield oep-calendar hasDatepicker" required="" name="ngaySinh" type="text" id="date">
+                                                                        <input class="oep-inputfield oep-calendar hasDatepicker" required="" name="ngaySinh" type="text" id="date" value="${hoSoDangKyHoKinhDoanh.getCongDan().getNgaySinh()}">
                                                                     </td>
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Dân tộc:</label>
@@ -1102,7 +1102,7 @@
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Quốc tịch:</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" required="" name="quocTich" type="text">
+                                                                        <input class="oep-inputfield" required="" name="quocTich" type="text" value="${hoSoDangKyHoKinhDoanh.getCongDan().getQuocTich()}">
                                                                     </td>
 
                                                                 </tr>
@@ -1114,17 +1114,17 @@
                                                                     <td colspan="1" style="padding-top: 0 !important;">
                                                                         <label class="oep-label-bold">Chứng minh nhân dân/Căn cước công dân số: </label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" type="text" name="cmndcancuoc">
+                                                                        <input class="oep-inputfield" type="text" name="cmndcancuoc" value="${hoSoDangKyHoKinhDoanh.getGiayTo().getSoGiayChungThuc()}">
                                                                     </td>
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Ngày cấp:</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield oep-calendar hasDatepicker" type="text" name="cmndNgayCap" id="dp1575274730392">
+                                                                        <input class="oep-inputfield oep-calendar hasDatepicker" type="text" name="cmndNgayCap" value="${hoSoDangKyHoKinhDoanh.getGiayTo().getNgayCap()}">
                                                                     </td>
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Nơi cấp:</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" type="text" name="cmndNoiCap">
+                                                                        <input class="oep-inputfield" type="text" name="cmndNoiCap" value="${hoSoDangKyHoKinhDoanh.getGiayTo().getNoiCap()}">
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -1240,7 +1240,7 @@
                                                                         <label class="oep-label-bold">1. Tên hộ kinh doanh: </label>
                                                                         <label class="oep-label-note">(ghi bằng chữ in hoa)</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" type="text" required="" name="tenKD">
+                                                                        <input class="oep-inputfield" type="text" required="" name="tenKD" value="${hoSoDangKyHoKinhDoanh.getTenHoKinhDoanh()}">
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -1275,20 +1275,20 @@
                                                                     <td colspan="1" style="padding-top: 0 !important;">
                                                                         <label class="oep-label-bold">Điện thoại:</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" type="text" required="" name="dienThoaiKD">
+                                                                        <input class="oep-inputfield" type="text" required="" name="dienThoaiKD" value="${hoSoDangKyHoKinhDoanh.getThongTinLienHe().getPhone()}">
                                                                     </td>
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Fax:</label>
-                                                                        <input class="oep-inputfield" name="faxKD" type="text">
+                                                                        <input class="oep-inputfield" name="faxKD" type="text" value="${hoSoDangKyHoKinhDoanh.getThongTinLienHe().getFax()}">
                                                                     </td>
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Email:</label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" required="" name="emailKD" type="text">
+                                                                        <input class="oep-inputfield" required="" name="emailKD" type="text" value="${hoSoDangKyHoKinhDoanh.getThongTinLienHe().getEmail()}">
                                                                     </td>
                                                                     <td colspan="1" style="padding-top: 0 !important; padding-left:10px;">
                                                                         <label class="oep-label-bold">Website:</label>
-                                                                        <input class="oep-inputfield" name="websiteKD" type="text">
+                                                                        <input class="oep-inputfield" name="websiteKD" type="text"value="${hoSoDangKyHoKinhDoanh.getThongTinLienHe().getWebsite()}">
                                                                     </td>
                                                                 </tr>
 
@@ -1296,7 +1296,7 @@
                                                                     <td colspan="4" style="padding-top: 0 !important;">
                                                                         <label class="oep-label-bold">3. Ngành, nghề kinh doanh: </label>
                                                                         <label class="oep-label-red">*</label>
-                                                                        <input class="oep-inputfield" type="text" required="" name="loaiHinhKD">
+                                                                        <input class="oep-inputfield" type="text" required="" name="loaiHinhKD" value="${hoSoDangKyHoKinhDoanh.getTenNganhNgheKinhDoanh()}">
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -1357,104 +1357,7 @@
                                                 <input type="submit" class="oep-button primary"  value="Thực hiện bước tiếp theo"/>
                                             </form>
                                         </div>
-                                        <!--
-                                                                            <script type="text/javascript">
-                                                                                eformOnloadInitial();
-                                                                                //window.setTimeout("eformOnloadInitial()",1000);	
-                                        
-                                                                                function createLiferayResourceURL(portletId, resourceId, params) {
-                                                                                    var resourceURL = Liferay.PortletURL.createResourceURL();
-                                                                                    resourceURL.setWindowState("normal");
-                                                                                    resourceURL.setPortletMode("view");
-                                                                                    resourceURL.setPortletId(portletId);
-                                                                                    resourceURL.setResourceId(resourceId);
-                                        
-                                                                                    if (params) {
-                                                                                        for (var key in params) {
-                                                                                            resourceURL.setParameter(key, params[key]);
-                                                                                        }
-                                                                                    }
-                                        
-                                                                                    return resourceURL.toString();
-                                                                                }
-                                        
-                                                                                function createResourceURL(resourceId, params) {
-                                                                                    return createLiferayResourceURL('eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9', resourceId, params);
-                                                                                }
-                                        
-                                                                                function callAjax(resourceId, params, callback) {
-                                                                                    var url = createResourceURL(resourceId, params);
-                                                                                    $_http.get(url).then(function(response) {
-                                                                                        callback(response.data);
-                                                                                    });
-                                                                                }
-                                        
-                                                                                function _eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_submit() {
-                                                                                    var form = document.fmt;
-                                                                                    $_scope.$apply(function() {
-                                                                                        $_scope.submitted = true;
-                                                                                    });
-                                                                                    if ($_scope.saveForm) {
-                                                                                        $_scope.saveForm();
-                                                                                    }
-                                        
-                                                                                    if ($_scope.fmt.$invalid) {
-                                                                                        alert('Bạn cần cam kết thông tin nhập là chính xác');
-                                                                                        return;
-                                                                                    }
-                                                                                    //console.log(form.elements);
-                                        
-                                                                                    var ttdon = {};
-                                                                                    for (var i = 0; i < form.elements.length; i++) {
-                                                                                        var e = form.elements[i];
-                                        
-                                                                                        if (e.name != '' && !e.name.startsWith('_eform')) {
-                                                                                            ttdon[e.name] = e.value;
-                                                                                            if (e.value.startsWith('number:')) {
-                                                                                                ttdon[e.name] = parseInt(e.value.replace('number:', ''));
-                                                                                            }
-                                        
-                                                                                            // check truong hop input là radio hoac checkbox
-                                                                                            if (e.type == "radio" || e.type == "checkbox") {
-                                                                                                if ($("input[name='" + e.name + "']").prop("checked")) {
-                                                                                                    console.log(e.name);
-                                                                                                    ttdon[e.name] = $("input[name='" + e.name + "']:checked").val();
-                                                                                                } else {
-                                                                                                    ttdon[e.name] = "";
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                    console.log(ttdon);
-                                                                                    var data = {
-                                                                                        ttdon: ttdon
-                                                                                    };
-                                                                                    $('#_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_jsonData').val(JSON.stringify(data));
-                                                                                    var isErrors = isEFormSubmitError('_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_frm_submit');
-                                                                                    if (!isErrors) {
-                                                                                        form.submit();
-                                                                                    } else {
-                                                                                        alert('Đề nghị nhập đầy đủ các trường bắt buộc để tiếp tục');
-                                                                                    }
-                                                                                }
-                                                                            </script>
-                                        
-                                                                            <script type="text/javascript">
-                                                                                $(document).ready(function() {
-                                                                                    console.log({});
-                                                                                    $.each({}, function(key, data) {
-                                                                                        $.each(data, function(index, data) {
-                                                                                            if ($("input[name='" + index + "']").attr('type') == "radio" || $("input[name='" + index + "']").attr('type') == "checkbox") {
-                                                                                                // check truong hop input là radio hoac checkbox
-                                                                                                $("input[name='" + index + "'][value='" + data + "']").prop("checked", true);
-                                                                                            } else {
-                                                                                                $("[name='" + index + "']").val(data);
-                                                                                            }
-                                                                                        })
-                                                                                    })
-                                        
-                                                                                });
-                                                                            </script>-->
+                                     
 
 
 
@@ -1478,200 +1381,7 @@
             </form>
         </div>
 
-        <!--    <footer class="container-fluid bg-xanh">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <h4 class="tle-f">Ủy Ban nhân dân Tỉnh Bắc Ninh</h4>
-                            <h3 class="tle-f1">CỔNG THÔNG TIN DỊCH VỤ CÔNG Tỉnh Bắc Ninh</h3>
-                            <p>
-                                Địa chỉ: Địa chỉ: Số 10 Phù Đổng Thiên Vương, Suối Hoa, Bắc Ninh.
-                                <br> Điện thoại :0222 3666 222
-                            </p>
-                        </div>
-                        <div class="col-md-5">
-                            <ul class="list-unstyled text-tc">
-                                <li class="">
-                                    <svg class="svg-inline--fa fa-chart-area fa-w-16 mr-5" aria-hidden="true" data-prefix="fas" data-icon="chart-area" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                                        <path fill="currentColor" d="M500 384c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v308h436zM372.7 159.5L288 216l-85.3-113.7c-5.1-6.8-15.5-6.3-19.9 1L96 248v104h384l-89.9-187.8c-3.2-6.5-11.4-8.7-17.4-4.7z"></path>
-                                    </svg>
-                                     <i class="fas fa-chart-area mr-5"></i> Số lượt truy cập: <strong>5698723</strong></li>
-                                <li>
-                                    <svg class="svg-inline--fa fa-user-clock fa-w-16 mr-5" aria-hidden="true" data-prefix="fas" data-icon="user-clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                                        <g>
-                                            <path fill="currentColor" d="M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z"></path>
-                                            <circle fill="currentColor" cx="256" cy="364" r="28">
-                                                <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="r" values="28;14;28;28;14;28;"></animate>
-                                                <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="1;0;1;1;0;1;"></animate>
-                                            </circle>
-                                            <path fill="currentColor" opacity="1" d="M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z">
-                                                <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="1;0;0;0;0;1;"></animate>
-                                            </path>
-                                            <path fill="currentColor" opacity="0" d="M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z">
-                                                <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="0;0;1;1;0;0;"></animate>
-                                            </path>
-                                        </g>
-                                    </svg>
-                                     <i class="fas fa-user-clock mr-5"></i> Số lượt đang online: <strong>723</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <div class="container-fluid bg-xanhdam">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="text-f1">©2019 Bản quyền thuộc về Tỉnh Bắc Ninh</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="text-f">
-                            <a href="http://dtt.vn"><img class="mr-5" src="/bacninh-home-v2-theme/images/logo-DTT.png" alt=""></a> Được thiết kế bởi DTT</p>
-                    </div>
-                </div>
-        
-            </div>
-             The scroll to top feature 
-        
-            <div class="scroll-top-wrapper">
-                <span class="scroll-top-inner">
-                        <svg class="svg-inline--fa fa-arrow-circle-up fa-w-16 fa-2x" aria-hidden="true" data-prefix="fa" data-icon="arrow-circle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg> <i class="fa fa-2x fa-arrow-circle-up"></i> 
-                  </span>
-            </div>
-        
-            <script type="text/javascript">
-                $(function() {
-                    $(".expand").on("click", function() {
-                        // $(this).next().slideToggle(200);
-                        $expand = $(this).find(">:first-child");
-        
-                        if ($expand.text() == "Thu gọn -") {
-                            $expand.text("Xem thêm +");
-                        } else {
-                            $expand.text("Thu gọn -");
-                        }
-                    });
-                });
-            </script>
-        
-            <script>
-                $(document).ready(function() {
-        
-                    $(function() {
-        
-                        $(document).on('scroll', function() {
-        
-                            if ($(window).scrollTop() > 100) {
-                                $('.scroll-top-wrapper').addClass('show');
-                            } else {
-                                $('.scroll-top-wrapper').removeClass('show');
-                            }
-                        });
-        
-                        $('.scroll-top-wrapper').on('click', scrollToTop);
-                    });
-        
-                    function scrollToTop() {
-                        verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-                        element = $('body');
-                        offset = element.offset();
-                        offsetTop = offset.top;
-                        $('html, body').animate({
-                            scrollTop: offsetTop
-                        }, 500, 'linear');
-                    }
-        
-                });
-            </script>
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#Carousel').carousel({
-                        interval: 5000
-                    })
-                });
-            </script>
-        
-            
-        
-            <script type="text/javascript">
-                // <![CDATA[
-        
-                Liferay.Util.addInputFocus();
-        
-                // ]]>
-            </script>
-        
-            <script type="text/javascript">
-                // <![CDATA[
-        
-                Liferay.Portlet.onLoad({
-                    canEditTitle: false,
-                    columnPos: 1,
-                    isStatic: 'end',
-                    namespacedId: 'p_p_id_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_',
-                    portletId: 'eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9',
-                    refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d1126713\x26p_p_id\x3deform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-2\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Feform\x253Fp_p_id\x253Deform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_tthcId\x253D5386\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_hoSoId\x253D0\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_clearSession\x253Dtrue\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_backURL\x253D\x26_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_clearSession\x3dtrue\x26_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_backURL\x3d\x26_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_hoSoId\x3d0\x26_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_tthcId\x3d5386'
-                });
-        
-                Liferay.Portlet.onLoad({
-                    canEditTitle: false,
-                    columnPos: 0,
-                    isStatic: 'end',
-                    namespacedId: 'p_p_id_workflowtabtab_WAR_oepworkflowportlet_',
-                    portletId: 'workflowtabtab_WAR_oepworkflowportlet',
-                    refreshURL: '\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d1126713\x26p_p_id\x3dworkflowtabtab_WAR_oepworkflowportlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-2\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Feform\x253Fp_p_id\x253Deform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9\x2526p_p_lifecycle\x253D0\x2526p_p_state\x253Dnormal\x2526p_p_mode\x253Dview\x2526p_p_col_id\x253Dcolumn-1\x2526p_p_col_count\x253D1\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_tthcId\x253D5386\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_hoSoId\x253D0\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_clearSession\x253Dtrue\x2526_eform_WAR_oepdvcportlet_INSTANCE_1cb0UZD6ZEJ9_backURL\x253D'
-                });
-                AUI().use('aui-base', 'liferay-menu', 'liferay-notice', 'liferay-poller', 'liferay-session', function(A) {
-                    (function() {
-                        Liferay.Util.addInputType();
-        
-                        Liferay.Portlet.ready(
-                            function(portletId, node) {
-                                Liferay.Util.addInputType(node);
-                            }
-                        );
-        
-                        if (A.UA.mobile) {
-                            Liferay.Util.addInputCancel();
-                        }
-                    })();
-                    (function() {
-                        new Liferay.Menu();
-        
-                        var liferayNotices = Liferay.Data.notices;
-        
-                        for (var i = 1; i < liferayNotices.length; i++) {
-                            new Liferay.Notice(liferayNotices[i]);
-                        }
-        
-                        Liferay.Poller.init({
-                            encryptedUserId: '+OI45uzbDJuvsza/T8ltzg==',
-                            supportsComet: false
-                        });
-        
-                    })();
-                    (function() {
-                        Liferay.Session = new Liferay.SessionBase({
-                            autoExtend: false,
-                            sessionLength: 30,
-                            redirectOnExpire: false,
-                            redirectUrl: 'https\x3a\x2f\x2fdvc\x2ebacninh\x2egov\x2evn\x2fweb\x2fguest',
-                            warningLength: 1
-                        });
-        
-                        Liferay.Session.plug(Liferay.SessionDisplay);
-        
-                    })();
-                });
-                // ]]>
-            </script>
-        
-            
-        
-            <script type="text/javascript">
-                // <![CDATA[
-        
-                // ]]>
-            </script>-->
+      
 
 
         <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>

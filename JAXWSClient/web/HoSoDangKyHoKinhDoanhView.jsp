@@ -482,7 +482,7 @@
             position: absolute;
         }
     </style>
-    <title>QUẢN LÝ HỒ SƠ - Chính quyền điện tử Bắc Ninh</title>
+    <title>QUẢN LÝ HỒ SƠ</title>
     <link rel="shortcut icon" href="/bacninh-home-theme/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/bacninh-home-theme/images/favicon.ico" type="image/x-icon">
     <meta charset="utf-8">
@@ -845,7 +845,7 @@
                         <div class="btn-group mr-20">
                             <button type="button" class="btn btn-default dropdown-toggle a-dropdown btn-avta" data-toggle="dropdown">
                                 <span class="caret"></span>
-                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831" alt="">Nguyễn Tiến Đạt
+                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831" alt="">${account.getUserName()}
                             </button>
 
                             <ul class="dropdown-menu" role="menu">
@@ -1161,10 +1161,9 @@
                                                                                         <label class="oep-label-red">*</label>
                                                                                         <label class="oep-label-red ng-hide" ng-show="submitted&amp;&amp; fmt.donviTiepNhanId.$error.required">Bạn phải chọn cơ quan quản lý</label>
                                                                                         <select required="" ng-model="hoSo.donviTiepNhanId" name="donviTiepNhanId" class="oep-select ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required">
-                                                                                            <option value="" selected="selected">----Chọn cơ quan quản lý----</option>
+                                                                                            <option value=" ${hoSoXem.getCoQuanTiepNhan().getTenCoQuanTiepNhan()}" selected="selected">${hoSoXem.getCoQuanTiepNhan().getTenCoQuanTiepNhan()}</option>
                                                                                             <!-- ngRepeat: toChuc in dsToChuc -->
-                                                                                            <option ng-repeat="toChuc in dsToChuc" ng-value="1311" class="ng-binding ng-scope" value="number:1311" selected="selected">Trung tâm Hành chính công huyện Quế Võ</option>
-                                                                                            <!-- end ngRepeat: toChuc in dsToChuc -->
+                                                                                           <option ng-repeat="toChuc in dsToChuc" ng-value="1135" class="ng-binding ng-scope" value="Phòng Tài chính-Kế hoạch - UBND thành phố Bắc Ninh">Phòng Tài chính-Kế hoạch - UBND thành phố Bắc Ninh</option>
                                                                                         </select>
                                                                                     </td>
                                                                                 </tr>

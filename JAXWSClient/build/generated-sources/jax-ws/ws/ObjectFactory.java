@@ -24,16 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _DangNhapResponse_QNAME = new QName("http://ws/", "dangNhapResponse");
-    private final static QName _NopHoSoResponse_QNAME = new QName("http://ws/", "nopHoSoResponse");
-    private final static QName _XoaHoSo_QNAME = new QName("http://ws/", "xoaHoSo");
-    private final static QName _LayListHoSo_QNAME = new QName("http://ws/", "layListHoSo");
-    private final static QName _XemHoSo_QNAME = new QName("http://ws/", "xemHoSo");
-    private final static QName _XemHoSoResponse_QNAME = new QName("http://ws/", "xemHoSoResponse");
-    private final static QName _NopHoSo_QNAME = new QName("http://ws/", "nopHoSo");
-    private final static QName _DangNhap_QNAME = new QName("http://ws/", "dangNhap");
-    private final static QName _XoaHoSoResponse_QNAME = new QName("http://ws/", "xoaHoSoResponse");
-    private final static QName _LayListHoSoResponse_QNAME = new QName("http://ws/", "layListHoSoResponse");
+    private final static QName _Find_QNAME = new QName("http://ws/", "find");
+    private final static QName _FindResponse_QNAME = new QName("http://ws/", "findResponse");
+    private final static QName _FindAllResponse_QNAME = new QName("http://ws/", "findAllResponse");
+    private final static QName _FindAll_QNAME = new QName("http://ws/", "findAll");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ws
@@ -43,229 +37,79 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DangNhapResponse }
+     * Create an instance of {@link Find }
      * 
      */
-    public DangNhapResponse createDangNhapResponse() {
-        return new DangNhapResponse();
+    public Find createFind() {
+        return new Find();
     }
 
     /**
-     * Create an instance of {@link NopHoSoResponse }
+     * Create an instance of {@link FindResponse }
      * 
      */
-    public NopHoSoResponse createNopHoSoResponse() {
-        return new NopHoSoResponse();
+    public FindResponse createFindResponse() {
+        return new FindResponse();
     }
 
     /**
-     * Create an instance of {@link XoaHoSo }
+     * Create an instance of {@link FindAllResponse }
      * 
      */
-    public XoaHoSo createXoaHoSo() {
-        return new XoaHoSo();
+    public FindAllResponse createFindAllResponse() {
+        return new FindAllResponse();
     }
 
     /**
-     * Create an instance of {@link LayListHoSo }
+     * Create an instance of {@link FindAll }
      * 
      */
-    public LayListHoSo createLayListHoSo() {
-        return new LayListHoSo();
+    public FindAll createFindAll() {
+        return new FindAll();
     }
 
     /**
-     * Create an instance of {@link XemHoSo }
+     * Create an instance of {@link Product }
      * 
      */
-    public XemHoSo createXemHoSo() {
-        return new XemHoSo();
+    public Product createProduct() {
+        return new Product();
     }
 
     /**
-     * Create an instance of {@link XemHoSoResponse }
+     * Create an instance of {@link JAXBElement }{@code <}{@link Find }{@code >}}
      * 
      */
-    public XemHoSoResponse createXemHoSoResponse() {
-        return new XemHoSoResponse();
+    @XmlElementDecl(namespace = "http://ws/", name = "find")
+    public JAXBElement<Find> createFind(Find value) {
+        return new JAXBElement<Find>(_Find_QNAME, Find.class, null, value);
     }
 
     /**
-     * Create an instance of {@link NopHoSo }
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindResponse }{@code >}}
      * 
      */
-    public NopHoSo createNopHoSo() {
-        return new NopHoSo();
+    @XmlElementDecl(namespace = "http://ws/", name = "findResponse")
+    public JAXBElement<FindResponse> createFindResponse(FindResponse value) {
+        return new JAXBElement<FindResponse>(_FindResponse_QNAME, FindResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link DangNhap }
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllResponse }{@code >}}
      * 
      */
-    public DangNhap createDangNhap() {
-        return new DangNhap();
+    @XmlElementDecl(namespace = "http://ws/", name = "findAllResponse")
+    public JAXBElement<FindAllResponse> createFindAllResponse(FindAllResponse value) {
+        return new JAXBElement<FindAllResponse>(_FindAllResponse_QNAME, FindAllResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link XoaHoSoResponse }
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAll }{@code >}}
      * 
      */
-    public XoaHoSoResponse createXoaHoSoResponse() {
-        return new XoaHoSoResponse();
-    }
-
-    /**
-     * Create an instance of {@link LayListHoSoResponse }
-     * 
-     */
-    public LayListHoSoResponse createLayListHoSoResponse() {
-        return new LayListHoSoResponse();
-    }
-
-    /**
-     * Create an instance of {@link CoQuanTiepNhan }
-     * 
-     */
-    public CoQuanTiepNhan createCoQuanTiepNhan() {
-        return new CoQuanTiepNhan();
-    }
-
-    /**
-     * Create an instance of {@link GiayTo }
-     * 
-     */
-    public GiayTo createGiayTo() {
-        return new GiayTo();
-    }
-
-    /**
-     * Create an instance of {@link HoSoDangKyHoKinhDoanh }
-     * 
-     */
-    public HoSoDangKyHoKinhDoanh createHoSoDangKyHoKinhDoanh() {
-        return new HoSoDangKyHoKinhDoanh();
-    }
-
-    /**
-     * Create an instance of {@link UserAccount }
-     * 
-     */
-    public UserAccount createUserAccount() {
-        return new UserAccount();
-    }
-
-    /**
-     * Create an instance of {@link CongDan }
-     * 
-     */
-    public CongDan createCongDan() {
-        return new CongDan();
-    }
-
-    /**
-     * Create an instance of {@link ThongTinLienHe }
-     * 
-     */
-    public ThongTinLienHe createThongTinLienHe() {
-        return new ThongTinLienHe();
-    }
-
-    /**
-     * Create an instance of {@link FileDinhKem }
-     * 
-     */
-    public FileDinhKem createFileDinhKem() {
-        return new FileDinhKem();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DangNhapResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "dangNhapResponse")
-    public JAXBElement<DangNhapResponse> createDangNhapResponse(DangNhapResponse value) {
-        return new JAXBElement<DangNhapResponse>(_DangNhapResponse_QNAME, DangNhapResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NopHoSoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "nopHoSoResponse")
-    public JAXBElement<NopHoSoResponse> createNopHoSoResponse(NopHoSoResponse value) {
-        return new JAXBElement<NopHoSoResponse>(_NopHoSoResponse_QNAME, NopHoSoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link XoaHoSo }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "xoaHoSo")
-    public JAXBElement<XoaHoSo> createXoaHoSo(XoaHoSo value) {
-        return new JAXBElement<XoaHoSo>(_XoaHoSo_QNAME, XoaHoSo.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LayListHoSo }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "layListHoSo")
-    public JAXBElement<LayListHoSo> createLayListHoSo(LayListHoSo value) {
-        return new JAXBElement<LayListHoSo>(_LayListHoSo_QNAME, LayListHoSo.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link XemHoSo }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "xemHoSo")
-    public JAXBElement<XemHoSo> createXemHoSo(XemHoSo value) {
-        return new JAXBElement<XemHoSo>(_XemHoSo_QNAME, XemHoSo.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link XemHoSoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "xemHoSoResponse")
-    public JAXBElement<XemHoSoResponse> createXemHoSoResponse(XemHoSoResponse value) {
-        return new JAXBElement<XemHoSoResponse>(_XemHoSoResponse_QNAME, XemHoSoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NopHoSo }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "nopHoSo")
-    public JAXBElement<NopHoSo> createNopHoSo(NopHoSo value) {
-        return new JAXBElement<NopHoSo>(_NopHoSo_QNAME, NopHoSo.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DangNhap }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "dangNhap")
-    public JAXBElement<DangNhap> createDangNhap(DangNhap value) {
-        return new JAXBElement<DangNhap>(_DangNhap_QNAME, DangNhap.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link XoaHoSoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "xoaHoSoResponse")
-    public JAXBElement<XoaHoSoResponse> createXoaHoSoResponse(XoaHoSoResponse value) {
-        return new JAXBElement<XoaHoSoResponse>(_XoaHoSoResponse_QNAME, XoaHoSoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LayListHoSoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws/", name = "layListHoSoResponse")
-    public JAXBElement<LayListHoSoResponse> createLayListHoSoResponse(LayListHoSoResponse value) {
-        return new JAXBElement<LayListHoSoResponse>(_LayListHoSoResponse_QNAME, LayListHoSoResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws/", name = "findAll")
+    public JAXBElement<FindAll> createFindAll(FindAll value) {
+        return new JAXBElement<FindAll>(_FindAll_QNAME, FindAll.class, null, value);
     }
 
 }

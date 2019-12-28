@@ -35,9 +35,9 @@ public class UserAccountDao {
         if (rs.next()) {
             String gender = rs.getString("Gender");
             UserAccount user = new UserAccount();
-            user.setUserName(userName);
+            user.setUsername(userName);
             user.setPassword(password);
-            user.setGender(gender);
+            user.setgender(gender);
             return user;
         }
         return null;

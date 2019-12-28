@@ -812,7 +812,7 @@
                         <div class="btn-group mr-20">
                             <button type="button" class="btn btn-default dropdown-toggle a-dropdown btn-avta" data-toggle="dropdown">
                                 <span class="caret"></span>
-                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831" alt="">Nguyễn Tiến Đạt
+                                <img class="img-thumbnail img-circle pad-2 mr-5" src="/image/user_male_portrait?img_id=0&amp;img_id_token=2dwVk1OM6abmpO5aOcwnI7Z1T%2Bs%3D&amp;t=1575089331831"  alt="">${account.getUserName()}
                             </button>
 
                             <ul class="dropdown-menu" role="menu">
@@ -850,7 +850,7 @@
             <div class="collapse navbar-collapse" id="defaultNavbar1">
                 <ul class="nav navbar-nav nav-yte">
                     <li>
-                        <a href="">
+                        <a href="TrangChuServlet">
 
  TRANG CHỦ
 							</a>

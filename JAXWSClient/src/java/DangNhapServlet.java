@@ -40,7 +40,13 @@ public class DangNhapServlet extends HttpServlet {
         dispatcher.forward(request, response);
         return;
         }
+        UserAccount account = new UserAccount();
+        account.setUserName(username);
+        account.setPassword(password);
+        // luu tai khoan vao session
+        request.getSession().setAttribute("account", account);
         
         response.sendRedirect(request.getContextPath() + "/TrangChuServlet");
+        
     }
 }
